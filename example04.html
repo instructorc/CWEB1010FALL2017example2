@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Class Example 2</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is going to be a site to demonstrate page layout">
+        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="author" content="C. Fulton">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Internal Style Method-->
+        <style>
+            body{
+                margin: 0;
+            }
+            #headstruct{
+                border: 2px solid red;
+                width: 100%;
+                height: 135px;
+            }
+            #sidestruct{
+                border: 2px solid green;
+                width: 29.5%;
+                height: 750px;
+                float: left;
+            }
+            #main{
+                border: 2px solid black;
+                width: 69.5%;
+                height: 750px;
+                float: left;
+            }
+            #footer{
+                border: 2px solid purple;
+                width: 100%;
+                height: 200px;
+                clear:both;
+            }
+            #wrapper{
+                width: 1000px;
+                margin: auto;
+            }
+            #headcontain{
+                width: 85%;
+                margin: auto;
+                border: 2px solid black;
+            }
+             .headnav{
+                border: 2px solid yellowgreen;
+                width: 39%;
+                height: 90px;
+                float: left;
+             }
+             #logo{
+                 border: 2px solid orangered;
+                 width: 20%;
+                 height: 90px;
+                 float: left;
+             }
+             li{
+                 border: 2px solid navy;
+                 display: inline;
+                 padding: 21px;
+             }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="headstruct">
+                <div id="headcontain">
+                    <nav class="headnav">
+                        <ul>
+                            <li><a href="" alt="alink">link 1 </a></li>
+                            <li><a href="" alt="alink">link 2 </a></li>
+                            <li><a href="" alt="alink">link 3 </a></li>
+                        </ul>
+                    </nav>
+                    <div id="logo">
+                        <img src="http://via.placeholder.com/100x90" alt="logo">
+                    </div>
+                    <nav class="headnav">
+                        <ul>
+                            <li><a href="" alt="alink">link 4 </a></li>
+                            <li><a href="" alt="alink">link 5 </a></li>
+                            <li><a href="" alt="alink">link 6 </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <aside id="sidestruct">
+            </aside>
+            <main id="main">
+            </main>
+            <footer id="footer">
+            </footer>
+        </div><!--End of wrapper-->
+
+    </body>
+</html>
