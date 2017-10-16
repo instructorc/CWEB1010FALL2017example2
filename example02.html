@@ -13,7 +13,7 @@
                 margin: 0px;
             }
             #wrapper{
-                width: 1000px;
+                width: 85%;
                 margin: auto;
             }
             #headstruct{
@@ -23,15 +23,17 @@
             }
             #sidestruct{
                 width: 29.5%;
-                height: 750px;
                 border: 2px solid green;
                 float: left;
+                display: flex;
+                flex-wrap: wrap;
             }
             #main{
                 width: 69.5%;
-                height: 750px;
                 border: 2px solid blue;
                 float: left;
+                display: flex;
+                flex-wrap: wrap;
             }
             #footer{
                 width: 100%;
@@ -59,6 +61,30 @@
             li{
                 display: inline;
                 border: 2px solid blue;
+            }
+            #asidetop{
+                border: 2px solid gray;
+                height: 500px;
+                flex: 1 0 200px;
+                margin: auto;
+            }
+            #asidebottom{
+                border: 2px solid gray;
+                height: 200px;
+                flex: 1 0 200px;
+                margin: auto;
+            }
+            #banner{
+               
+                height: 300px;
+                border: 2px solid red;
+                flex: 2 0 100%;
+
+            }
+            .boxmain{
+                border: 2px solid gold;
+                height: 400px;
+                flex: 1 0 300px;
             }
 
 
@@ -89,8 +115,13 @@
                 </div><!--End of headcontain-->
             </header>
             <aside id="sidestruct">
+                <div id="asidetop"></div>
+                <div id="asidebottom"></div>
             </aside>
             <main id="main">
+                <div id="banner"></div>
+                <section class="boxmain"></section>
+                <section class="boxmain"></section>
             </main>
             <footer id="footer">
             </footer>
