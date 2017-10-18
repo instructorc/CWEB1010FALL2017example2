@@ -7,10 +7,27 @@
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <meta name="author" content="C. Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700" rel="stylesheet">
         <!--Internal Style Method-->
         <style>
             body{
                 margin: 0;
+                font-family: 'Josefin Slab', serif;
+                font-size: 1em;
+            }
+            a:link{
+                color: #262228;
+            }
+            a:visited{
+                color: #262228;
+            }
+            a:active{
+                color: #007849;
+            }
+            a:hover{
+                color: white;
+                background-color: #0375B4;
             }
             #headstruct{
                 border: 2px solid red;
@@ -36,7 +53,7 @@
                 clear:both;
             }
             #wrapper{
-                width: 1000px;
+                width: 85%;
                 margin: auto;
             }
             #headcontain{
@@ -94,7 +111,14 @@
                 order: 99;
                 
              }
+             #lower{
+                 background-color: aqua;
+                 background-image: url(https://pre00.deviantart.net/9203/th/pre/i/2013/078/9/6/free_hexa_pattern_cc0_by_black_light_studio-d4ig12f.png);
+                 font-weight: 900;
+                 font-size: 2em;
+             }
         </style>
+        
     </head>
     <body>
         <div id="wrapper">
@@ -121,7 +145,7 @@
             </header>
             <aside id="sidestruct">
                 <div id="upper"></div>
-                <div id="lower"></div>
+                <div id="lower">This is an example of layering</div>
             </aside>
             <div id="flexasidemain">
                 <main id="main">
