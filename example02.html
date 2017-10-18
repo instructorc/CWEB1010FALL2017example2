@@ -7,10 +7,40 @@
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <meta name="author" content="C.Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Implementing Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
         <!--Internal CSS Method-->
         <style>
             body{
                 margin: 0px;
+                font-family: 'Permanent Marker', cursive;
+                font-size: 1em;
+                color: rgb(38,34,40);
+            }
+            a{
+                text-decoration: none; 
+            }
+            a:link{
+                color:rgb(38,34,40);
+               
+            }
+
+        
+            a:visited{
+                color:rgb(38,34,40);
+            }
+            a:active{
+                color: red;
+
+            }
+            li:hover {
+                background-color:  #007849;
+                color: white; 
+
+                
+            }
+            li:hover a{
+                color: white;
             }
             #wrapper{
                 width: 85%;
@@ -59,6 +89,7 @@
                 float: left;
             }
             li{
+                padding: 2em;
                 display: inline;
                 border: 2px solid blue;
             }
@@ -85,6 +116,12 @@
                 border: 2px solid gold;
                 height: 400px;
                 flex: 1 0 300px;
+            }
+            #asidebottom{
+
+                color:white;
+                font-size: 2em;
+                font-weight: 700;
             }
 
 
@@ -116,7 +153,7 @@
             </header>
             <aside id="sidestruct">
                 <div id="asidetop"></div>
-                <div id="asidebottom"></div>
+                <div id="asidebottom">This is an example of element layering</div>
             </aside>
             <main id="main">
                 <div id="banner"></div>
