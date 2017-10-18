@@ -7,10 +7,36 @@
         <meta name="keywords" content="HTML,CSS,XML,JavaScript">
         <meta name="author" content="C.Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Implementing Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
         <!--Example of Internal CSS-->
         <style>
             body{
                 margin: 0px;
+                font-family: 'Permanent Marker', cursive;
+                font-size: 1em;
+                color: rgb(38, 34, 40);
+            }
+            a{
+                color: #262228;
+                text-decoration: none;
+            }
+            a:link{
+                color: #262228;
+            }
+
+            a:visited{
+                color: #262228; 
+            }
+            a:active{
+                color: #0375B4;
+            }
+            li:hover{
+                background-color:#007849;
+                color: white;
+            }
+            li:hover a{
+                color: white;
             }
             #headstruct{
                 border: 2px solid red;
@@ -38,7 +64,7 @@
                 clear: both;
             }
             #wrapper{
-                width: 1000px;
+                width: 85%;
                 margin: auto;
             }
             #headercontain{
@@ -61,6 +87,7 @@
             li{
                 border: 2px solid seagreen;
                 display: inline;
+                padding: 2em;
             }
             #asideupper{
                 border: 2px solid gray;
@@ -73,6 +100,9 @@
                 flex: 1 0 300px;
                 margin: auto;
                 height: 200px;
+                color: white;
+                background-color: #0090ff;
+                background-image: url(https://www.transparenttextures.com/patterns/dark-mosaic.png);
             }
             #banner{
                 height: 300px;
@@ -114,7 +144,7 @@
             </header>
             <aside id="side">
                 <div id="asideupper"></div>
-                <div id="asidelower"></div>
+                <div id="asidelower">Demonstating Element Layering</div>
             </aside>
             <main id="main">
                 <div id="banner"></div>
