@@ -9,141 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Google Font-->
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+                <!--External CSS-->
+                <link href="style.css" type="text/css" rel="stylesheet">
         <!--Internal Style Method-->
         <style>
-            body{
-                margin: 0;
-                font-family: 'Permanent Marker', cursive;
-                font-size: 1em;
-                background-image: url(paper.jpg);
 
-            }
-            a{
-
-                text-decoration: none;
-            }
-            a:link{
-                color: white;
-            }
-            a:visited{
-                color: white;
-            }
-            a:active{
-                color: #007849;
-            }
-
-            #headstruct{
-                background-color: #0375B4;
-                width: 100%;
-                height: 65px;
-                font-size: 1.6em;
-                box-shadow: 8px 12px 30px #262228;
-                margin-bottom: 3em;
-          
-            }
-            #sidestruct{
-                border: 2px solid green;
-                width: 29.5%;
-                height: 750px;
-                float: left;
-                color: white;
-            }
-            #main{
-                border: 2px solid black;
-                width: 69.5%;
-                height: 750px;
-                float: left;
-            }
-            #footer{
-                border: 2px solid purple;
-                width: 100%;
-                height: 200px;
-                clear:both;
-            }
-            #wrapper{
-                width: 85%;
-                margin: auto;
-            }
-            #headcontain{
-                width: 85%;
-                display: flex;
-
-                margin: auto;
-                
-            }
-             .headnav{
-                
-                width: 39%;
-                flex: 1 0 300px;
-                height: 65px;
-                float: left;
-             }
-             #logo{
-                 border: 8px solid #0375B4;
-                 background-color: white;
-                 border-radius: 3em;
-                 flex: 1 0 100px;
-                 height: 90px;
-                 float: left;
-             }
-             ul{
-                 display: flex;
-                margin: 0;
-                padding: 0;
-             }
-             li{
-                 
-                 display: inline;
-                 text-align: center;
-                 height: 55px;
-                padding-top: .4em;
-                 flex: 1 0 100px;
-             }
-             li:hover{
-                 background-color: #FFCE00
-             }
-             li:hover a{
-                color:#262228;
-             }
-             #upper{
-                 width: 90%;
-                 height: 500px;
-                 margin: auto;
-                 border: 2px solid gray;
-             }
-
-             #lower{
-
-                 width: 90%;
-                 height: 200px;
-                 margin: auto;
-                 border: 2px solid gray;
-             }
-             #mainflex{
-                 width: 100%;
-                 border: 2px solid black;
-                 display: flex;
-                 flex-wrap: wrap;
-             }
-             #banner{
-                border: 2px solid red;
-                height: 300px;
-                flex: 1 0 100%;
-                order: 1;
-             }
-             .mainbox{
-                border: 2px solid olivedrab;
-                flex: 1 0 300px;
-                height: 400px;
-                order: 99;
-                
-             }
-             #lower{
-                 background-color: aqua;
-                 background-image: url(https://pre00.deviantart.net/9203/th/pre/i/2013/078/9/6/free_hexa_pattern_cc0_by_black_light_studio-d4ig12f.png);
-                 font-weight: 900;
-                 font-size: 2em;
-             }
         </style>
         
     </head>
@@ -159,7 +29,7 @@
                         </ul>
                     </nav>
                     <div id="logo">
-                        <img src="truck.png" width="120" alt="logo">
+                        <img src="truck.png" id="nonogood" width="120" alt="logo">
                     </div>
                     <nav class="headnav">
                         <ul>
