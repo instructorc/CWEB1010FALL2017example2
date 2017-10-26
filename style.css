@@ -40,7 +40,7 @@ li{
 }
 
 li:hover{
-    background-color: #FFCE00
+    background-color: #FFCE00;
 }
 li:hover a{
    color:#262228;
@@ -61,7 +61,7 @@ li:hover a{
 #sidestruct{
     background-color: rgba(255,255,255,.7);
     box-shadow: 8px 8px 10px #383838, 6px 12px 33px 5px #383838;
-    width: 26.5%;
+    width: 25.5%;
     
     float: left;
     display: flex;
@@ -134,7 +134,8 @@ ul{
 .boxmain{
     display: flex;
     flex-wrap: wrap;
-    flex: 1 0 300px;
+    flex: 2 0 300px;
+    margin: 10px;
 }
 #asidebottom{
 
@@ -144,7 +145,7 @@ ul{
 }
 label{
     
-    flex: 1 0 110px;
+    flex: 1 0 200px;
     font-size: 1.4em;
    
 }
@@ -152,7 +153,7 @@ form{
     display: flex;
     flex-wrap: wrap;
 }
-input[type="text"], input[type="tel"], input[type="email"]{
+input[type="text"], input[type="tel"], input[type="email"], select{
 
    flex: 1 0 200px;
    background-color: rgba(255, 255, 255, 0);
@@ -160,11 +161,18 @@ input[type="text"], input[type="tel"], input[type="email"]{
    margin: 1em; 
    height: 50px;
    box-shadow: 8px 6px 12px #aaa;
-   flex-direction: column;
-   justify-content: space-between;
+
 }
 input[type="radio"]{
-   flex: 1 0 10px;
+   
+}
+button{
+    flex: 0 0 400px;
+    width: 400px;
+    margin: auto;
+}
+form p{
+    flex: 1 0 200px;
 }
 
 
