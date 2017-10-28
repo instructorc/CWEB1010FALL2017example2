@@ -38,7 +38,7 @@ ul{
     flex: 1 0 100px;
  }
 li:hover{
-    background-color: #FFCE00
+    background-color: #FFCE00;
 }
 li:hover a{
    color:#262228;
@@ -157,5 +157,6 @@ input[type="radio"]{
 #containmid{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 
 }
