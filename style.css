@@ -123,24 +123,21 @@ li:hover a{
 
 }
 .boxmain{
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 0 300px;
+
 }
 form{
-    display: flex;
-    flex-wrap: wrap;
+
 }
 label{
     
-    flex: 1 0 125px;
+    
     padding-top: 8%;
     font-size:1.3em;
 
 }
 input[type="text"], input[type="tel"], input[type="email"]{
 
-   flex: 1 0 135px;
+   width: 235px;
    background-color: rgba(255, 255, 255, 0);
    border: none;
    margin: 1em; 
@@ -148,11 +145,10 @@ input[type="text"], input[type="tel"], input[type="email"]{
    font-size: 1.3em;
    height: 50px;
    box-shadow: 8px 6px 12px #aaa;
-   flex-direction: column;
-   justify-content: space-between;
+
 }
 input[type="radio"]{
-   flex: 1 0 10px;
+
 }
 #containmid{
     display: flex;
