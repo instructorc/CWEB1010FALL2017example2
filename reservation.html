@@ -41,31 +41,36 @@
             </header>
             <div id="containmid">
                 <aside id="side">
-                    <div id="asideupper"></div>
+                    <div id="asideupper">
+                        <div id="info">
+
+
+                        </div>
+                    </div>
                     <div id="asidelower">Demonstating Element Layering</div>
                 </aside>
                 <main id="main">
                     <h1>Reservation Form</h1>
-                    <form action="https://formspree.io/cfulton@dunwoody.edu" method="POST">
+                    <form action="" method="POST">
                     <section class="boxmain">
                         <label>First Name</label>
-                        <input type="text" name="first" placeholder="Ex. Chris"><br>
+                        <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
                         <label>Last Name</label>
-                        <input type="text" name="last" placeholder="Ex. Fulton"><br>
+                        <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
                         <label> Zip</label>
-                        <input type="text" name="pickupzip"><br>
+                        <input type="text" id="zip" name="pickupzip"><br>
                         <label>Please select service</label>
-                        <select name="service">
-                            <option value="standard">Free standard</option>
-                            <option value="express">Express delivered within 2- 3 days</option>
-                            <option value="immediate">Same day delivery</option>
+                        <select name="service" id="service">
+                            <option value="0.00">Free standard</option>
+                            <option value="10.00">Express delivered within 2- 3 days</option>
+                            <option value="25.00">Same day delivery</option>
                           </select><br>
                         <label> Package size</label><br>
-                        <input type="radio" name="package" value="small" checked> Small<br>
-                        <input type="radio" name="package" value="medium"> Medium<br>
-                        <input type="radio" name="package" value="large"> Large <br>
-                        <input type="radio" name="package" value="oversize"> Oversize <br>
-                        <input type="submit" value="Submit Reservation">
+                        <input type="radio" id="small" name="package" value="small" checked> Small<br>
+                        <input type="radio" id="medium" name="package" value="medium"> Medium<br>
+                        <input type="radio" id="large" name="package" value="large"> Large <br>
+                        <input type="radio" id="oversized" name="package" value="oversize"> Oversize <br>
+                        <input type="submit" id="submitbutton" value="Submit Reservation">
                     </section>
                     <section class="boxmain"></section>
                 </form>
@@ -74,5 +79,25 @@
             <footer id="footer">
             </footer>
         </div><!--End of wrapper-->
+        <!--Internal JS-->
+        <script>
+            //Defining the reservationSummary
+            function reservationSummary(){
+
+                //Declaring the variables
+                var firstName, lastName, zip, serviceSelected;
+                firstName = document.getElementById('first').value;
+                lastName = document.getElementById('last').value;
+                zip = document.getElementById('zip').value;
+                serviceSelected = document.getElementById('service').value;
+
+                
+
+                document.getElementById('info').innerHTML = "<h2> First Name: </h2> " + firstName + "<h2> Last Name:</h2>" + lastName + "<h2> Zip Code: </h2>" + zip;
+                event.preventDefault();
+            }
+
+        document.getElementById('submitbutton').addEventListener('click',reservationSummary)
+        </script>
     </body>
 </html>
