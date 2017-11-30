@@ -132,9 +132,7 @@ ul{
 
 }
 .boxmain{
-    display: flex;
-    flex-wrap: wrap;
-    flex: 2 0 300px;
+    font-size: 1em;
     margin: 10px;
 }
 #asidebottom{
@@ -145,7 +143,7 @@ ul{
 }
 label{
     
-    flex: 1 0 200px;
+    width: 200px;
     font-size: 1.4em;
    
 }
@@ -155,7 +153,9 @@ form{
 }
 input[type="text"], input[type="tel"], input[type="email"], select{
 
-   flex: 1 0 200px;
+   width: 200px;
+   font-size: 1.4em;
+   font-family: arial;
    background-color: rgba(255, 255, 255, 0);
    border: none;
    margin: 1em; 
@@ -167,9 +167,14 @@ input[type="radio"]{
    
 }
 button{
-    flex: 0 0 400px;
+    margin-top: 1em;
+    background-color: #0375B4;
+    color: white;
     width: 400px;
     margin: auto;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.9em;
+    padding: .5em;
 }
 form p{
     flex: 1 0 200px;
