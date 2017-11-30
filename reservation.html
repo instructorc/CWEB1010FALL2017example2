@@ -42,20 +42,25 @@
                 </div><!--End of headcontain-->
             </header>
             <aside id="sidestruct">
-                <div id="asidetop"></div>
+                <div id="asidetop">
+                    <div id="info">
+
+
+                    </div>
+                </div>
                 <div id="asidebottom">This is an example of element layering</div>
             </aside>
             <main id="main">
                 <h1>Reservation Estimate Form</h1>
-                <form action="processdata.php" method="GET">
+                <form action="" method="GET">
 
                 <section class="boxmain">
                     <label>First Name:</label>
-                    <input type="text" name="first" placeholder="Ex. Chris" reqired maxLength="40"><br>
+                    <input type="text" id="first" name="first" placeholder="Ex. Chris" reqired maxLength="40"><br>
                     <label>Last Name:</label>
-                    <input type="text" name="last" placeholder="Ex. Fulton"><br>
+                    <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
                     <label>Zip:</label>
-                    <input type="text" name="pickzip"> <br>
+                    <input type="text" id="zip" name="pickzip"> <br>
                     <label> Delivery Service</label>
                     <select id="service">
                         <option value="0.00">Select Option</option> 
@@ -65,12 +70,12 @@
 
                       </select><br>
                     <label> Package size</label>
-                    <input type="radio" name="package" value="small" checked> Small
-                    <input type="radio" name="package" value="medium"> Medium
-                    <input type="radio" name="package" value="large"> Large  
+                    <input type="radio" id="small" name="package" value="small" checked> Small
+                    <input type="radio" id="medium" name="package" value="medium"> Medium
+                    <input type="radio" id="large" name="package" value="large"> Large  
                     <br>
                      <br> 
-                    <button type="submit">Get Estimate Summary</button>
+                    <button type="submit" id="submitbutton">Get Estimate Summary</button>
                 </section>      
 
             </form>
@@ -78,6 +83,26 @@
             <footer id="footer">
             </footer>
         </div><!--end of wrapper-->
+        <script>
+            //define 
+            function reservationEstimate(){
+                //declaring our variables
+                var firstName, lastName, zipCode, selectedService;
+               firstName =  document.getElementById('first').value;
+               lastName =  document.getElementById('last').value;
+               zipCode =  document.getElementById('zip').value;
+               selectedService = document.getElementById('service').value;
+               
+               
+               var serviceValue = selectedService.value;
+               var serviceText  = selectedService.innerHTML;
+               document.getElementById('info').innerHTML = "<h2>First Name: </h2>" + firstName + "<h2>Last Name: </h2> " + lastName + "<h2> Zip Code </h2> " + zipCode + "<h2> Selected Service</h2> " + serviceText;
+               event.preventDefault();
+            }
+
+
+            document.getElementById('submitbutton').addEventListener('click',reservationEstimate);
+        </script>
     </body>
 
 </html>
