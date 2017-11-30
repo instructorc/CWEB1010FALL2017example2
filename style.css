@@ -156,3 +156,13 @@ input[type="radio"]{
     margin-bottom: 20px;
 
 }
+select{
+    width: 235px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    margin: 1em;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3em;
+    height: 50px;
+    box-shadow: 8px 6px 12px #aaa;
+}
