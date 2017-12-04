@@ -56,7 +56,7 @@
                     <div id="mainflex">
                         
                         <section class="mainbox">
-                            <form action="process.php" method="GET">
+                            <form action="" method="GET">
                                 <label> First Name</label>
                                 <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
                                 <label>Last Name</label>
@@ -65,15 +65,15 @@
                                 <input type="text" id="zip" name="zip"><br>
                                 <label> Delivery Service</label>
                                 <select id="service" name="service">
-                                    <option value="standard">Standard (delivery within 3-5 days)</option>
-                                    <option value="express">Express (delivery within 1-2 days)</option>
-                                    <option value="sameday">Immediate (delivery on the same day)</option>
+                                    <option id="standard" value="5.00">Standard (delivery within 3-5 days)</option>
+                                    <option id="express" value="10.00">Express (delivery within 1-2 days)</option>
+                                    <option id="sameday" value="15.00">Immediate (delivery on the same day)</option>
                                 </select><br>
                                 <label>Package Size</label>
-                                <input type="radio" id="small" name="package" value="small" checked> Small
-                                <input type="radio" id="medium" name="package" value="Medium"> Medium
-                                <input type="radio" id="large" name="package" value="Large"> Large
-                                <input type="radio" id="oversized" name="package" value="oversized"> Oversized
+                                <input type="radio" id="small" name="package" value="2.00" checked> Small
+                                <input type="radio" id="medium" name="package" value="4.00"> Medium
+                                <input type="radio" id="large" name="package" value="6.00"> Large
+                                <input type="radio" id="oversized" name="package" value="8.00"> Oversized
                                 <br>
                                 <button id="sumbitbutton" type="submit">Submit</button>
                                 <input type="reset">
@@ -99,18 +99,38 @@
                     var zip;
                     var deliveryService;
                     var packageSize;
+                    var serviceOutput;
+                    var options;
+                    var packagePrice;
 
                    firstName = document.getElementById('first').value;
                    lastName = document.getElementById('last').value;
                    zip = document.getElementById('zip').value;
+                   deliveryService = document.getElementById('service').value;
+                   serviceOutput = document.getElementById('service').selectedIndex;
+                   options = document.getElementsByTagName('option');
+                   
+                   console.log(options[serviceOutput].innerHTML);
+
+                   if(document.getElementById('small').checked){
+                        packagePrice = document.getElementById('small').value;
+                   }else if(document.getElementById('medium').checked){
+                        packagePrice = document.getElementById('medium').value;
+                   }
+                   console.log(packagePrice);
+                   console.log(document.getElementById('small').text);
+
+                  
+                   
 
                    document.getElementById('info').innerHTML = '<h2> First Name: </h2> ' + firstName + '<br> <h2> Last Name:</h2> ' + lastName + 
-                                                               '<br> <h2> Zip: </h2> ' + zip;
+                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ' + options[serviceOutput].innerHTML;
                 event.preventDefault();
             }
 
+
            
-            document.getElementById('sumbitbutton').addEventListener('click', reservationSummary)
+            document.getElementById('sumbitbutton').addEventListener('click', reservationSummary);
         </script>
     </body>
 </html>
