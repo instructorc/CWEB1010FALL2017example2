@@ -64,11 +64,11 @@ li:hover a{
     width: 25.5%;
     
     float: left;
-    display: flex;
-    flex-wrap: wrap;
+
 }
 #main{
     background-color: rgba(255,255,255,.7);
+    height: 750px;
     margin: 0px 0px 0px 32px;
     box-shadow: 8px 8px 10px #383838, 6px 12px 33px 5px #383838;
     width: 68.5%;
@@ -114,7 +114,7 @@ ul{
 
 #asidetop{
     
-    height: 500px;
+   
     flex: 1 0 200px;
     margin: auto;
 }
@@ -178,6 +178,9 @@ button{
 }
 form p{
     flex: 1 0 200px;
+}
+#info{
+    padding: 2em;
 }
 
 
