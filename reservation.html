@@ -8,6 +8,7 @@
         <meta name="author" content="C.Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Implementing Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">        
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
         <!--External CSS-->
         <link href="style.css" rel="stylesheet" type="text/css">
@@ -42,38 +43,40 @@
             <div id="containmid">
                 <aside id="side">
                     <div id="asideupper">
-                        <div id="info">
+                            <h1>Reservation Inquiry</h1>
+                            <form action="" method="POST">
+                                    <label>First Name</label>
+                                    <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
+                                    <label>Last Name</label>
+                                    <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
+                                    <label> Zip</label>
+                                    <input type="text" id="zip" name="pickupzip"><br>
+                                    <label>Please select service</label>
+                                    <select name="service" id="service">
+                                        <option value="0.00">Free standard</option>
+                                        <option value="10.00">Express delivered within 2- 3 days</option>
+                                        <option value="25.00">Same day delivery</option>
+                                    </select><br>
+                                    <label> Package size</label><br>
+                                    <input type="radio" id="small" name="package" value="small" checked> Small<br>
+                                    <input type="radio" id="medium" name="package" value="medium"> Medium<br>
+                                    <input type="radio" id="large" name="package" value="large"> Large  <br><br>
+                                    <input type="submit" id="submitbutton" value="Submit Reservation">
+                                </form>
 
-
-                        </div>
                     </div>
-                    <div id="asidelower">Demonstating Element Layering</div>
+                    
                 </aside>
                 <main id="main">
-                    <h1>Reservation Form</h1>
-                    <form action="" method="POST">
+                    <h1>Reservation Summary Estimate</h1>
+                    
                     <section class="boxmain">
-                        <label>First Name</label>
-                        <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
-                        <label>Last Name</label>
-                        <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
-                        <label> Zip</label>
-                        <input type="text" id="zip" name="pickupzip"><br>
-                        <label>Please select service</label>
-                        <select name="service" id="service">
-                            <option value="0.00">Free standard</option>
-                            <option value="10.00">Express delivered within 2- 3 days</option>
-                            <option value="25.00">Same day delivery</option>
-                          </select><br>
-                        <label> Package size</label><br>
-                        <input type="radio" id="small" name="package" value="small" checked> Small<br>
-                        <input type="radio" id="medium" name="package" value="medium"> Medium<br>
-                        <input type="radio" id="large" name="package" value="large"> Large <br>
-                        <input type="radio" id="oversized" name="package" value="oversize"> Oversize <br>
-                        <input type="submit" id="submitbutton" value="Submit Reservation">
+                        <div id="info">
+                                
+                                
+                        </div>
                     </section>
                     <section class="boxmain"></section>
-                </form>
                 </main>
             </div><!--end of contianmid-->
             <footer id="footer">
@@ -93,7 +96,7 @@
 
 
 
-                document.getElementById('info').innerHTML = "<h2> First Name: </h2> " + firstName + "<h2> Last Name:</h2>" + lastName + "<h2> Zip Code: </h2>" + zip + "<h2> Selected Service: </h2>" + serviceSelected;
+                document.getElementById('info').innerHTML = "<h2> First Name: </h2> <p>" + firstName + "</p><h2> Last Name:</h2> <p>" + lastName + "</p> <h2> Zip Code: </h2> <p>" + zip + " </p> <h2> Selected Service: </h2> <p>" + serviceSelected + "</p>";
                 event.preventDefault();
             }
 

@@ -74,9 +74,11 @@ li:hover a{
 }
 #footer{
     height: 225px;
-    border: 2px solid blue;
+    
     width: 100%;
     clear: both;
+    background-color: rgba(255,255,255,.7);
+    box-shadow: 8px 8px 10px #383838, 6px 12px 33px 5px #383838;
 }
 #wrapper{
     width: 85%;
@@ -106,7 +108,7 @@ li:hover a{
    
     flex: 1 0 300px;
     margin: auto;
-    height: 500px;
+    padding: 1.8em;
 }
 #asidelower{
   
@@ -137,17 +139,22 @@ label{
 }
 input[type="text"], input[type="tel"], input[type="email"]{
 
-   width: 235px;
+   width: 180px;
    background-color: rgba(255, 255, 255, 0);
    border: none;
-   margin: 1em; 
-   font-family: 'Permanent Marker', cursive;
+   margin: .4em; 
+   font-family: 'Quicksand', sans-serif;
    font-size: 1.3em;
    height: 50px;
    box-shadow: 8px 6px 12px #aaa;
 
 }
 input[type="radio"]{
+
+}
+#info p{
+    font-family: 'Quicksand', sans-serif;
+
 
 }
 #containmid{
@@ -160,9 +167,17 @@ select{
     width: 235px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
-    margin: 1em;
-    font-family: 'Permanent Marker', cursive;
+    margin: .4em;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.3em;
     height: 50px;
     box-shadow: 8px 6px 12px #aaa;
+}
+input[type="submit"]{
+    background-color: #0375b4;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3em;
+    width: 80%;
+    height: 50px;
 }
