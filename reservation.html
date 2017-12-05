@@ -95,6 +95,7 @@
             provide estimated summary price**/
             //Define function that will take in data 
             function reservationSummary(){
+                //declaring variables
                     var firstName;
                     var lastName;
                     var zip;
@@ -103,23 +104,32 @@
                     var serviceOutput;
                     var options;
                     var packagePrice;
-
+                    var total;
+                    var baseDeliveryPrice = 4.00;
+                
+                //initializing variables
                    firstName = document.getElementById('first').value;
                    lastName = document.getElementById('last').value;
                    zip = document.getElementById('zip').value;
                    deliveryService = document.getElementById('service').value;
-                  
-             
+                   serviceOutput = document.getElementById('service').selectedIndex;
+                   options = document.getElementsByTagName('option');
+                
                    
+                   if(document.getElementById('small').checked){
+                        packagePrice = document.getElementById('small').value;
+                   }else if(document.getElementById('medium').checked){
+                       packagePrice = document.getElementById('medium').value;
+                   }else{
+                       packagePrice = document.getElementById('large').value;
+                   }
                    
-
-      
-
-                  
+                   total = baseDeliveryPrice + parseFloat(packagePrice) + parseFloat(deliveryService);
+                  console.log(total);
                    
 
                    document.getElementById('info').innerHTML = '<h2> First Name: </h2> ' + firstName + '<br> <h2> Last Name:</h2> ' + lastName + 
-                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ';
+                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ' + options[serviceOutput].innerHTML + '<br> <h2> Estimated delivery total: </h2> $' + total;
                 event.preventDefault();
             }
 
