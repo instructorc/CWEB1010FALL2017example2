@@ -58,9 +58,9 @@
                                         <option value="25.00">Same day delivery</option>
                                     </select><br>
                                     <label> Package size</label><br>
-                                    <input type="radio" id="small" name="package" value="small" checked> Small<br>
-                                    <input type="radio" id="medium" name="package" value="medium"> Medium<br>
-                                    <input type="radio" id="large" name="package" value="large"> Large  <br><br>
+                                    <input type="radio" id="small" name="package" value="2.00" checked> Small<br>
+                                    <input type="radio" id="medium" name="package" value="6.00"> Medium<br>
+                                    <input type="radio" id="large" name="package" value="8.00"> Large  <br><br>
                                     <input type="submit" id="submitbutton" value="Submit Reservation">
                                 </form>
 
@@ -88,15 +88,36 @@
             function reservationSummary(){
 
                 //Declaring the variables
-                var firstName, lastName, zip, serviceSelected;
+                var firstName, lastName, zip, serviceSelected, selectionOption, options, packageValue, total;
+                var basePrice = 5.00;
+
+                //Initializing variables
                 firstName = document.getElementById('first').value;
                 lastName = document.getElementById('last').value;
                 zip = document.getElementById('zip').value;
                 serviceSelected = document.getElementById('service').value;
+                selectedOption = document.getElementById('service').selectedIndex;
+                options = document.getElementsByTagName('option');
+
+                if(document.getElementById('small').checked){
+                    packageValue = document.getElementById('small').value;
+                }else if(document.getElementById('medium').checked){
+                    packageValue = document.getElementById('medium').value;
+                }else{
+                    packageValue = document.getElementById('large').value;
+                }
+               
+                var format = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    minimumFractionDigits: 2,
+                });
+
+                total = basePrice + parseFloat(serviceSelected) + parseFloat(packageValue);
+                console.log(total);
 
 
-
-                document.getElementById('info').innerHTML = "<h2> First Name: </h2> <p>" + firstName + "</p><h2> Last Name:</h2> <p>" + lastName + "</p> <h2> Zip Code: </h2> <p>" + zip + " </p> <h2> Selected Service: </h2> <p>" + serviceSelected + "</p>";
+                document.getElementById('info').innerHTML = "<h2> First Name: </h2> <p>" + firstName + "</p><h2> Last Name:</h2> <p>" + lastName + "</p> <h2> Zip Code: </h2> <p>" + zip + " </p> <h2> Selected Service: </h2> <p>" + options[selectedOption].innerHTML + "</p> <h2> Total Estimated Price </h2> <p>" + total + "</p>";
                 event.preventDefault();
             }
 
