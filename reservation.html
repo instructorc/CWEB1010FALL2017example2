@@ -42,42 +42,43 @@
             </header>
             <aside id="sidestruct">
                 <div id="upper">
+                    <h1> Reservation Form</h1>
+                    <form action="" method="GET">
+                            <label> First Name</label>
+                            <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
+                            <label>Last Name</label>
+                            <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
+                            <label>Zip</label>
+                            <input type="text" id="zip" name="zip"><br>
+                            <label> Delivery Service</label>
+                            <select id="service" name="service">
+                                <option id="standard" value="5.00">Standard (delivery within 3-5 days)</option>
+                                <option id="express" value="10.00">Express (delivery within 1-2 days)</option>
+                                <option id="sameday" value="15.00">Immediate (delivery on the same day)</option>
+                            </select><br>
+                            <label>Package Size</label><br>
+                            <input type="radio" id="small" name="package" value="2.00" checked> Small
+                            <input type="radio" id="medium" name="package" value="4.00"> Medium
+                            <input type="radio" id="large" name="package" value="6.00"> Large
+                            
+                            <br>
+                            <button id="sumbitbutton" type="submit">Submit</button>
+                            <input type="reset">
+                        </form>
 
-                    <div id="info">
-
-
-                    </div>
                 </div>
-                <div id="lower">This is an example of layering</div>
+                
             </aside>
             <div id="flexasidemain">
                 <main id="main">
-                    <h1> Reservation Form</h1>
+                    <h1> Reservation Summary</h1>
                     <div id="mainflex">
                         
                         <section class="mainbox">
-                            <form action="" method="GET">
-                                <label> First Name</label>
-                                <input type="text" id="first" name="first" placeholder="Ex. Chris"><br>
-                                <label>Last Name</label>
-                                <input type="text" id="last" name="last" placeholder="Ex. Fulton"><br>
-                                <label>Zip</label>
-                                <input type="text" id="zip" name="zip"><br>
-                                <label> Delivery Service</label>
-                                <select id="service" name="service">
-                                    <option id="standard" value="5.00">Standard (delivery within 3-5 days)</option>
-                                    <option id="express" value="10.00">Express (delivery within 1-2 days)</option>
-                                    <option id="sameday" value="15.00">Immediate (delivery on the same day)</option>
-                                </select><br>
-                                <label>Package Size</label>
-                                <input type="radio" id="small" name="package" value="2.00" checked> Small
-                                <input type="radio" id="medium" name="package" value="4.00"> Medium
-                                <input type="radio" id="large" name="package" value="6.00"> Large
-                                <input type="radio" id="oversized" name="package" value="8.00"> Oversized
-                                <br>
-                                <button id="sumbitbutton" type="submit">Submit</button>
-                                <input type="reset">
-                            </form>
+                            <div id="info">
+                                    
+                                    
+                            </div>
 
 
                         </section>
@@ -107,24 +108,18 @@
                    lastName = document.getElementById('last').value;
                    zip = document.getElementById('zip').value;
                    deliveryService = document.getElementById('service').value;
-                   serviceOutput = document.getElementById('service').selectedIndex;
-                   options = document.getElementsByTagName('option');
+                  
+             
                    
-                   console.log(options[serviceOutput].innerHTML);
+                   
 
-                   if(document.getElementById('small').checked){
-                        packagePrice = document.getElementById('small').value;
-                   }else if(document.getElementById('medium').checked){
-                        packagePrice = document.getElementById('medium').value;
-                   }
-                   console.log(packagePrice);
-                   console.log(document.getElementById('small').text);
+      
 
                   
                    
 
                    document.getElementById('info').innerHTML = '<h2> First Name: </h2> ' + firstName + '<br> <h2> Last Name:</h2> ' + lastName + 
-                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ' + options[serviceOutput].innerHTML;
+                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ';
                 event.preventDefault();
             }
 
