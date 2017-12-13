@@ -86,29 +86,47 @@
             </footer>
         </div><!--end of wrapper-->
         <script>
+
+            var userReservation = {
+
+                firstName: "name",
+                lastName: "lastname",
+                zipCode: 234343,
+                selectedService: 343434,
+                packageValue: 34.33,
+                BASE_PRICE: 2.00,
+                getTotal: function(){
+
+                    return  this.BASE_PRICE + this.packageValue + this.selectedService;
+                }
+                
+
+            }
+
+
             //define 
             function reservationEstimate(){
                 //declaring our variables
-                var firstName, lastName, zipCode, selectedService,total, serviceIndex, optionArray, packageValue;
+                var  serviceIndex, optionArray ;
                 var BASE_PRICE = 2.00;
-               firstName =  document.getElementById('first').value;
-               lastName =  document.getElementById('last').value;
-               zipCode =  document.getElementById('zip').value;
-               selectedService = document.getElementById('service').value;
+               userReservation.firstName =  document.getElementById('first').value;
+               userReservation.lastName =  document.getElementById('last').value;
+               userReservation.zipCode =  document.getElementById('zip').value;
+               userReservation.selectedService = document.getElementById('service').value;
                serviceIndex = document.getElementById('service').selectedIndex;
                
                optionArray = document.getElementsByTagName('option');
 
                if(document.getElementById('small').checked == true){
-                packageValue = document.getElementById('small').value;
+                userReservation.packageValue = document.getElementById('small').value;
                }else if(document.getElementById('medium').checked == true){
-                packageValue = document.getElementById('medium').value;
+                userReservation.packageValue = document.getElementById('medium').value;
                }else{
-                packageValue = document.getElementById('large').value; 
+                userReservation.packageValue = document.getElementById('large').value; 
                }
                
 
-               total = BASE_PRICE + parseFloat(selectedService) + parseFloat(packageValue);
+               
                 
                var formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
@@ -118,7 +136,7 @@
 			
                
 
-               document.getElementById('info').innerHTML = "<h2>First Name: </h2>" + firstName + "<h2>Last Name: </h2> " + lastName + "<h2> Zip Code </h2> " + zipCode + "<h2> Selected Service</h2> " + optionArray[serviceIndex].innerHTML + "<h2> Your estimated Price: </h2> " + total ;
+               document.getElementById('info').innerHTML = "<h2>First Name: </h2>" + userReservation.firstName + "<h2>Last Name: </h2> " + userReservation.lastName + "<h2> Zip Code </h2> " + userReservation.zipCode + "<h2> Selected Service</h2> " + optionArray[serviceIndex].innerHTML + "<h2> Your estimated Price: </h2> " + userReservation.getTotal();
                event.preventDefault();
             }
 
