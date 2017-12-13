@@ -91,51 +91,63 @@
         </div><!--End of wrapper-->
         <!--Implementation of Internal JS-->
         <script>
+
+
+            //Creating Rerservation Summary Object
+            var reservationSummary = {
+
+                firstName: "",
+                lastName: "",
+                zip: 0000000,
+                deliveryService: 00,
+                packageSize: 00,
+                baseDeliveryPrice: 4.00,
+                
+                getTotal: function(){
+                   return this.baseDeliveryPrice + this.packageSize + this.deliveryService;
+                }
+
+            }
             /**this code is going to take in end-user information and calculate values and 
             provide estimated summary price**/
             //Define function that will take in data 
-            function reservationSummary(){
+            function summary(){
                 //declaring variables
-                    var firstName;
-                    var lastName;
-                    var zip;
-                    var deliveryService;
-                    var packageSize;
+  
                     var serviceOutput;
                     var options;
-                    var packagePrice;
-                    var total;
-                    var baseDeliveryPrice = 4.00;
+                    
+                 
+          
                 
                 //initializing variables
-                   firstName = document.getElementById('first').value;
-                   lastName = document.getElementById('last').value;
-                   zip = document.getElementById('zip').value;
-                   deliveryService = document.getElementById('service').value;
+                    reservationSummary.firstName = document.getElementById('first').value;
+                    reservationSummary.lastName = document.getElementById('last').value;
+                    reservationSummary.zip = document.getElementById('zip').value;
+                    reservationSummary.deliveryService = document.getElementById('service').value;
                    serviceOutput = document.getElementById('service').selectedIndex;
                    options = document.getElementsByTagName('option');
                 
                    
                    if(document.getElementById('small').checked){
-                        packagePrice = document.getElementById('small').value;
+                    reservationSummary.packageSize = document.getElementById('small').value;
                    }else if(document.getElementById('medium').checked){
-                       packagePrice = document.getElementById('medium').value;
+                    reservationSummary.packageSize= document.getElementById('medium').value;
                    }else{
-                       packagePrice = document.getElementById('large').value;
+                    reservationSummary.packageSize = document.getElementById('large').value;
                    }
                    
-                   total = baseDeliveryPrice + parseFloat(packagePrice) + parseFloat(deliveryService);
-                  console.log(total);
+
                    
 
-                   document.getElementById('info').innerHTML = '<h2> First Name: </h2> ' + firstName + '<br> <h2> Last Name:</h2> ' + lastName + 
-                                                               '<br> <h2> Zip: </h2> ' + zip + '<br> <h2> Service: </h2> ' + options[serviceOutput].innerHTML + '<br> <h2> Estimated delivery total: </h2> $' + total;
+                   document.getElementById('info').innerHTML = '<h2> First Name: </h2> ' + reservationSummary.firstName + '<br> <h2> Last Name:</h2> ' + reservationSummary.lastName + 
+                                                               '<br> <h2> Zip: </h2> ' + reservationSummary.zip + '<br> <h2> Service: </h2> ' + options[serviceOutput].innerHTML + '<br> <h2> Estimated delivery total: </h2> $' + reservationSummary.getTotal();
                 event.preventDefault();
             }
 
 
            
-            document.getElementById('sumbitbutton').addEventListener('click', reservationSummary);
+            document.getElementById('sumbitbutton').addEventListener('click', summary);
         </script>
     </body>
 </html>
