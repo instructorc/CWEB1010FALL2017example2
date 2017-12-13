@@ -84,27 +84,40 @@
         </div><!--End of wrapper-->
         <!--Internal JS-->
         <script>
+
+            var userSummary = {
+                firstName: "Ex John",
+                lastName: "Ex Doe",
+                zip: 000000,
+                serviceSelected: 0.0,
+                packageValue: 0.0,
+                BASE_PRICE: 5.00,
+                getTotal: function(){
+                    return  this.BASE_PRICE + this.serviceSelected + this.packageValue;
+                }
+
+            }
             //Defining the reservationSummary
             function reservationSummary(){
 
                 //Declaring the variables
-                var firstName, lastName, zip, serviceSelected, selectionOption, options, packageValue, total;
-                var basePrice = 5.00;
+                var  selectionOption, options;
+              
 
                 //Initializing variables
-                firstName = document.getElementById('first').value;
-                lastName = document.getElementById('last').value;
-                zip = document.getElementById('zip').value;
-                serviceSelected = document.getElementById('service').value;
+                userSummary.firstName = document.getElementById('first').value;
+                userSummary.lastName = document.getElementById('last').value;
+                userSummary.zip = document.getElementById('zip').value;
+                userSummary.serviceSelected = document.getElementById('service').value;
                 selectedOption = document.getElementById('service').selectedIndex;
                 options = document.getElementsByTagName('option');
 
                 if(document.getElementById('small').checked){
-                    packageValue = document.getElementById('small').value;
+                    userSummary.packageValue = document.getElementById('small').value;
                 }else if(document.getElementById('medium').checked){
-                    packageValue = document.getElementById('medium').value;
+                    userSummary.packageValue = document.getElementById('medium').value;
                 }else{
-                    packageValue = document.getElementById('large').value;
+                    userSummary.packageValue = document.getElementById('large').value;
                 }
                
                 var format = new Intl.NumberFormat('en-US', {
@@ -113,11 +126,10 @@
                     minimumFractionDigits: 2,
                 });
 
-                total = basePrice + parseFloat(serviceSelected) + parseFloat(packageValue);
-                console.log(total);
 
 
-                document.getElementById('info').innerHTML = "<h2> First Name: </h2> <p>" + firstName + "</p><h2> Last Name:</h2> <p>" + lastName + "</p> <h2> Zip Code: </h2> <p>" + zip + " </p> <h2> Selected Service: </h2> <p>" + options[selectedOption].innerHTML + "</p> <h2> Total Estimated Price </h2> <p>" + total + "</p>";
+
+                document.getElementById('info').innerHTML = "<h2> First Name: </h2> <p>" + userSummary.firstName + "</p><h2> Last Name:</h2> <p>" + userSummary.lastName + "</p> <h2> Zip Code: </h2> <p>" + userSummary.zip + " </p> <h2> Selected Service: </h2> <p>" + options[selectedOption].innerHTML + "</p> <h2> Total Estimated Price </h2> <p>" + userSummary.getTotal() + "</p>";
                 event.preventDefault();
             }
 
